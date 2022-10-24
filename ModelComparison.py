@@ -13,7 +13,7 @@ from sklearn import svm
 
 
 #-----Reading the input data-----
-data = pd.read_csv('T22.txt',sep='\t')
+data = pd.read_csv('allsamples_importantFeatures.txt',sep='\t')
 col = data.columns.values.tolist()
 colFeature = col[1:23]
 X = np.array(data[colFeature])
