@@ -9,16 +9,12 @@ from sklearn.model_selection import LeaveOneOut
 from sklearn.metrics import roc_curve
 import shap
 
-
-my_cv = LeaveOneOut()
-
 #-----read the input data-----
 dataset = pd.read_csv('bio5year_delRepeat.txt',sep='\t')
 col = dataset.columns.values.tolist()
 varFeatures = col[1:278]
 data_x = np.array(dataset[varFeatures])
 data_y = dataset['Tendency']
-
 
 #----- Building model -----
 xgbModel = xgb.XGBClassifier(n_estimators=40,max_depth=2,learning_rate=0.01,colsample_bytree=0.7,objective='binary:logistic',random_state=8,use_label_encoder =False, eval_metric='mlogloss')
@@ -48,6 +44,3 @@ explainer = shap.TreeExplainer(xgbModel)
 shap_values = explainer.shap_values(data_x)
 allFeatures=pd.DataFrame(data_x, columns = dataset.columns.drop('Tendency'))
 shap.summary_plot(shap_values, allFeatures, plot_type="bar", max_display=22)
-
-
-
