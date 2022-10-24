@@ -10,7 +10,7 @@ from sklearn.svm import LinearSVC
 from sklearn import svm
 import random
 
-#-----Reading the input data-----
+#-----Reading the input data------
 colFeature  = pd.read_csv('allsamples_importantFeatures.txt',sep='\t')
 important_features = ['FAM19A5','TDRKH','KLK12','CNTNAP2','DCTN1','TRAF2','LY75','TNFRSF9','DCN','LAG3','LRRN1','IL10','METAP1D','CPXM1','CD4','SIGLEC6','TNFRSF4','CXCL9','ANGPT1','CD40-L','CBL','IRAK1']
 target = 'Tendency'
