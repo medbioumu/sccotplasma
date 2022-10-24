@@ -9,7 +9,7 @@ from sklearn.model_selection import LeaveOneOut
 from sklearn.metrics import roc_curve
 import shap
 
-#-----read the input data-----
+#-----reading the input data-----
 dataset = pd.read_csv('bio5year_delRepeat.txt',sep='\t')
 col = dataset.columns.values.tolist()
 varFeatures = col[1:278]
