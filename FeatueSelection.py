@@ -17,7 +17,7 @@ varFeatures = col[1:278]
 data_x = np.array(dataset[varFeatures])
 data_y = dataset['Tendency']
 
-#----- Building model -----
+#----- Building model ------
 xgbModel = xgb.XGBClassifier(n_estimators=40,max_depth=2,learning_rate=0.01,colsample_bytree=0.7,objective='binary:logistic',random_state=8,use_label_encoder =False, eval_metric='mlogloss')
 
 #----- Calculating model performance -----
